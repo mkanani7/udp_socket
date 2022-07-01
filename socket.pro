@@ -1,4 +1,7 @@
-QT -= gui
+QT       += core gui
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
 QT += network
 CONFIG += c++17 console
 CONFIG -= app_bundle
@@ -9,6 +12,8 @@ CONFIG -= app_bundle
 
 SOURCES += \
         DataSender.cpp \
+        MainWindow.cpp \
+        SenderForm.cpp \
         main.cpp
 
 # Default rules for deployment.
@@ -18,5 +23,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     DataSender.h \
-    NetworkInfos.h
+    MainWindow.h \
+    NetworkInfos.h \
+    SenderForm.h
+
+FORMS += \
+    MainWindow.ui \
+    SenderForm.ui
 
